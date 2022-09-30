@@ -9,14 +9,15 @@ export class CardComponent implements OnInit {
   @Input() cards: any[];
   @Input() type: string;
   @Input() level: string;
-  @Input() firstCard: string;
   card: string;
   cardPosition: number;
+  filteredCards: any[];
 
   constructor() {}
   ngOnInit(): void {
     this.card = this.cards[0];
     this.cardPosition = 0;
+    this.filteredCards = [...this.cards];
   }
 
   previousCard() {
@@ -25,7 +26,14 @@ export class CardComponent implements OnInit {
   }
 
   nextCard() {
-    this.cardPosition = this.cardPosition + 1;
-    this.card = this.cards[this.cardPosition];
+    if (this.cardPosition < this.cards.length) {
+      this.cardPosition = this.cardPosition + 1;
+      this.card = this.cards[this.cardPosition];
+    }
+  }
+
+  handleSearch(event) {
+    const query = event.target.value.toLowerCase();
+    this.filteredCards = this.cards.filter(d => d.toLowerCase().indexOf(query) > -1);
   }
 }

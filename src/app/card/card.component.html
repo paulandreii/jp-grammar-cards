@@ -2,23 +2,26 @@
   <img src="../../assets/{{ type }}/{{ level }}/{{ card }}" />
   <ion-grid>
     <ion-row>
-      <ion-col class="right"
+      <ion-col class="left"
         ><ion-button
           class="ion-align-self-start"
           (click)="previousCard()"
           fill="outline"
-          *ngIf="card !== firstCard"
+          *ngIf="cardPosition !== 0"
           >Previous</ion-button
         ></ion-col
       >
-      <ion-col class="left"
+      <ion-col class="right"
         ><ion-button
           class="ion-align-self-end"
           (click)="nextCard()"
           fill="outline"
+          *ngIf="cardPosition !== (cards.length - 1)"
           >Next</ion-button
         ></ion-col
       >
     </ion-row>
   </ion-grid>
 </ion-card>
+<app-card-search [cards]="cards" [type]="type" [level]="level"></app-card-search>
+

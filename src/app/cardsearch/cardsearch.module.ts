@@ -2,8 +2,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from './card.component';
-import { CardSearchComponentModule } from '../cardsearch/cardsearch.module';
+import { CardSearchComponent } from './cardsearch.component';
 
 
 @NgModule({
@@ -11,9 +10,8 @@ import { CardSearchComponentModule } from '../cardsearch/cardsearch.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    CardSearchComponentModule,
   ],
-  declarations: [CardComponent],
-  exports: [CardComponent],
+  declarations: [CardSearchComponent],
+  exports: [CardSearchComponent],
 })
-export class CardComponentModule {}
+export class CardSearchComponentModule {}

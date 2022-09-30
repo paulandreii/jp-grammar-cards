@@ -1,0 +1,7 @@
+<div>
+  <ion-searchbar [debounce]="1000" (ionChange)="handleSearch($event)"></ion-searchbar>
+  <ion-card *ngFor="let card of filteredCards">
+    <img src="../../assets/{{ type }}/{{ level }}/{{ card }}" />
+  </ion-card>
+</div>
+
