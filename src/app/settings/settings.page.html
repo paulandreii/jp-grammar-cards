@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Settings </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list class="w-75">
+    <ion-item>
+      <ion-select
+        (ionChange)="applySettings($event)"
+        placeholder="Select level"
+        value="{{settingsService.level}}"
+      >
+        <ion-select-option value="n1">N1</ion-select-option>
+        <ion-select-option value="n2">N2</ion-select-option>
+        <ion-select-option value="n3">N3</ion-select-option>
+        <ion-select-option value="n4">N4</ion-select-option>
+        <ion-select-option value="n5">N5</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

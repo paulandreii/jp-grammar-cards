@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Kanji </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Grammar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-card *ngIf="kanjiCards"
+    [cards]="kanjiCards"
+    [type]="'kanji'"
+    [level]="settingsService.level"
+    [firstCard]="kanjiCards[0]"
+  ></app-card>
+  <ion-label *ngIf="!kanjiCards">No cards found for this level!</ion-label>
+</ion-content>

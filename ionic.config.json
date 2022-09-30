@@ -1,0 +1,7 @@
+{
+  "name": "jp-study-cards",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

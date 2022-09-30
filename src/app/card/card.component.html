@@ -1,0 +1,24 @@
+<ion-card>
+  <img src="../../assets/{{ type }}/{{ level }}/{{ card }}" />
+  <ion-grid>
+    <ion-row>
+      <ion-col class="right"
+        ><ion-button
+          class="ion-align-self-start"
+          (click)="previousCard()"
+          fill="outline"
+          *ngIf="card !== firstCard"
+          >Previous</ion-button
+        ></ion-col
+      >
+      <ion-col class="left"
+        ><ion-button
+          class="ion-align-self-end"
+          (click)="nextCard()"
+          fill="outline"
+          >Next</ion-button
+        ></ion-col
+      >
+    </ion-row>
+  </ion-grid>
+</ion-card>
